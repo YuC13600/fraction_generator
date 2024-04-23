@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <ctime>
 #include <algorithm>
@@ -230,6 +231,11 @@ public:
 };
 int main(void) {
     srand(time(NULL));
+    string name = to_string(rand()%10000);
+    string ques = name + ".md";
+    string ans = name + "_ans.md";
+    ofstream fans(ans);
+    ofstream fques(ques);
     for (long long i(0); i < 100; ++i) {
         Equation e = Equation();
         e.set();
@@ -239,7 +245,10 @@ int main(void) {
             i -= 1;
             continue;
         }
-        cout << "$$ " << e.get() << " = " << ans << " $$\n";
+        fques << "$$ " << i + 1 << " .\\;\\;\\; " << e.get() << " = $$\n";
+        fans << "$$ " << i + 1 << " .\\;\\;\\; " << e.get() << " = " << ans << " $$\n";
     }
+    fans.close();
+    fques.close();
     return 0;
 }
