@@ -236,7 +236,7 @@ int main(void) {
     string ans = name + "_ans.md";
     ofstream fans(ans);
     ofstream fques(ques);
-    for (long long i(0); i < 100; ++i) {
+    for (long long i(0); i < 300; ++i) {
         Equation e = Equation();
         e.set();
         string ans = e.answer();
