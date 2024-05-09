@@ -25,8 +25,8 @@ public:
 
     void set() {
         is_mixed = rand() % 2;
-        denominator = rand() % 80 + 2;
-        numerator_part = rand() % 80 + 2;
+        denominator = rand() % 20 + 2;
+        numerator_part = rand() % 20 + 2;
         if (denominator < numerator_part) {
             swap(denominator, numerator_part);
         }
@@ -34,7 +34,7 @@ public:
             denominator += 1;
         }
         if (is_mixed) {
-            whole_part = rand() % 100 + 1;
+            whole_part = rand() % 25 + 1;
         } else {
             whole_part = (long long)NULL;
         }
